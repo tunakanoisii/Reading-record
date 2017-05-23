@@ -5,56 +5,88 @@
 
 
 body{
+	width: 100%;
 	height: 100%;
 }
 
 header{
-	width: auto;
-	height: 80px;
-	padding:0 30px;
-	margin: 0;
+	width: 100%;
+	height: 100px;
+	margin: 0 auto;
+	top: 0;
+	left: 0;
 
-	border-bottom: 1px solid #FC7895;
+	background-color: #FFF;
+	position: fixed;
+	z-index: 999;
+
+	opacity: 0.9;
 }
 
 #logo{
 	width: 250px;
 	height: 50px;
-	margin: 20px 95px;
+	margin: 25px 0;
+	margin-left: 10%; 
 	float: left;
 
-	position: absolute;
+	position: relative;
 
 	background-color: #bbb;
 }
 
-.l-grid-01{
-	width: 230px;
-	height: 40px;
-	margin: 20px 15px;
+.menu{
+	width: 320px;
+	height: 50px;
+	margin: 25px 0px;
+	margin-right: 10%;
 	padding: 0px 15px;
+
+	position: relative;
 	float: right;
 }
 
-.menu{
-	width: 70px;
-	height: 30px;
-	margin: 10px;
-	padding: 10px;
+.menu-element{
+	width: 60px;
+	height: 50px;
+	margin: 0;
+	padding: 0px 40px;
 	display: inline-block;
+	float: right;
+	line-height: 50px;
+	text-align: center;
 
+	position: relative;
 	background-color: #fff;
 
+	transition: .3s;
+}
+
+.menu-element::after{
+	position: absolute;
+	bottom: .3em;
+	left: 0;
+	content:'';
+	width: 100%;
+	height: 1px;
+	background-color: #FFAAA5;
+	opacity: 0;
+	transition: .3s;
+}
+
+.menu-element:hover::after{
+	bottom: 0;
+	opacity: 1;
 }
 
 #main{
 	width: 1200px;
 	height: 100%;
-	margin:  30px auto;
+	margin:  100px auto;
 }
 
 .l-area{
-	width: 100%;
+	width: 1200px;
 	height: 100%;
 	margin: 50px auto;
 
@@ -86,7 +118,7 @@ figcaption{
 	z-index: 2;
 	width: 100%;
 	height: 100%;
-	background: #FA8072;
+	background: #FFD3B6;
 
 	-webkit-transition: .3s;
 	transition: .3s;
