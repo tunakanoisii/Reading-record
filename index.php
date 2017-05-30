@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <link rel="stylesheet" href="css/index.css">
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 
 <head>
 	<meta charset="UTF-8">
@@ -19,7 +20,7 @@
 	</header>
 
 	<div id="main">
-	<!--
+	
 		<ul id="output">
 		<?php
 		/*$url = "http://api.booklog.jp/json/sinasi";*/
@@ -28,10 +29,10 @@
 		<section>
 			<h1>Novels</h1>
 			<ul id="books" class="book-area">
-				<script type="text/javascript" src="index.js" ></script>
+				<script type="text/javascript" src="js/jquery.akBooklog-master/jquery.akBooklog.js" ></script>
 			</ul>
 		</section>
-		-->
+		
 
 		<div class="l-area">
 			<div class="book-area">
