@@ -19,28 +19,20 @@
 	</header>
 
 	<div id="main">
+	<!--
 		<ul id="output">
 		<?php
-		$url = "http://api.booklog.jp/json/sinasi";
-		?>
-		
-			<script type ="text/javascript">
-
-
-				var test = {
-					"name" : "島脇", 
-					"age" : "22"
-				}
-
-				document.write('name:' + test.name + 'age:' + test.age);
-			</script>
-			
+		/*$url = "http://api.booklog.jp/json/sinasi";*/
+		?>			
 		</ul>
+		<section>
+			<h1>Novels</h1>
+			<ul id="books" class="book-area">
+				<script type="text/javascript" src="index.js" ></script>
+			</ul>
+		</section>
+		-->
 
-		<div class="test">
-			<script type="text/javascript" src="http://widget.booklog.jp/blogparts/js/booklog_minishelf.js?default" id="booklog_minishelf"></script>
-			<script type="text/javascript" src="http://api.booklog.jp/json/sinasi?category=0&count=15&callback=booklog_minishelf"></script>
-		</div>
 		<div class="l-area">
 			<div class="book-area">
 				<img src="img/陽だまりの彼女.jpg" alt="">

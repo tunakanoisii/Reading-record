@@ -15,7 +15,7 @@
      * Option - defaults
      */
     options = $.extend({
-      booklog_id: 'booklog2',
+      booklog_id: 'sinasi',
       booklog_category: 0,
       booklog_status: 0,
       booklog_rank: 0,
