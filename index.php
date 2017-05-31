@@ -27,6 +27,7 @@
 
 	<div id="main">
 <div class="l-area">
+<!--
 	<div class="book-area">
 		<img src="img/陽だまりの彼女.jpg" alt="">
 		<figcaption></figcaption>
@@ -46,34 +47,17 @@
 		<img src="img/隣の家の少女.jpg" alt="">
 		<figcaption></figcaption>
 	</div>
-
-	<div class="book-area">
-		<img src="img/花の鎖.jpg" alt="">
-		<figcaption></figcaption>
-	</div>
-
-	<div class="book-area">
-		<img src="img/イニシエーション・ラブ.jpg" alt="">
-		<figcaption></figcaption>
-	</div>
-
-	<div class="book-area">
-		<img src="img/レインツリーの国.jpg" alt="">	
-		<figcaption></figcaption>	
-	</div>
-
-	<div class="book-area">
-		<img src="img/ぼくは明日、昨日のきみとデートする.jpg" alt="">
-		<figcaption></figcaption>
-	</div>
+	-->
 
 	<?php
-	$json = file_get_contents("https://api.booklog.jp/json/sinasi?count=20&status=4");//jsonを取ってくる
+	$json = file_get_contents("https://api.booklog.jp/json/sinasi?count=350&status=0");//jsonを取ってくる
 	$arr = json_decode($json, true)["books"];//連想配列変換(デコード)する
 
 	foreach($arr as $data){//EOFで改行でかける
+		$src =  $data['image'];
+	$src = preg_replace("/\..{6}\.jpg$/", ".jpg", $src);
 	echo <<<EOF
-	<div class="book-area"><img src="{$data['image']}"/>
+	<div class="book-area"><img src="{$src}"/>
 	<figcaption></figcaption>
 	</div>
 EOF;

@@ -99,7 +99,7 @@ header{
 }
 
 .book-area{
-	width: 100px;
+	width: 200px;
 	height: 270px;
 	margin: 20px;
 	background-color: #eee;
@@ -110,7 +110,7 @@ header{
 }
 
 .book-area img{
-	width: 100px;
+	width: 200px;
 	height: 100%;
 	margin: auto;
 
