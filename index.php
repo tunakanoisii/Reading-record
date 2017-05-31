@@ -4,11 +4,9 @@
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/jquery.akBooklog-master/jquery.akBooklog.js" ></script>
 <script type="text/javascript">
-$(function(){
-	$('#books').akBooklog({})
-})
-	
-
+	$(function(){
+		$('#books').akBooklog({})
+	})
 </script>
 
 <head>
@@ -28,75 +26,69 @@ $(function(){
 	</header>
 
 	<div id="main">
-	
-		<ul id="output">
-		<?php
-		/*$url = "http://api.booklog.jp/json/sinasi";*/
-		?>			
-		</ul>
-
-		<section>
-			<h1>Novels</h1>
-			<ul id="books" class="book-area">
-				
-			</ul>
-		</section>
-		
-
-		<div class="l-area">
-			<div class="book-area">
-				<img src="img/陽だまりの彼女.jpg" alt="">
-				<figcaption></figcaption>
-			</div>
-
-			<div class="book-area">
-				<img src="img/告白.jpg" alt="">
-				<figcaption></figcaption>
-			</div>
-
-			<div class="book-area">
-				<img src="img/高校入試.jpg" alt="">
-				<figcaption></figcaption>
-			</div>
-
-			<div class="book-area">
-				<img src="img/隣の家の少女.jpg" alt="">
-				<figcaption></figcaption>
-			</div>
-
-			<div class="book-area">
-				<img src="img/花の鎖.jpg" alt="">
-				<figcaption></figcaption>
-			</div>
-
-			<div class="book-area">
-				<img src="img/イニシエーション・ラブ.jpg" alt="">
-				<figcaption></figcaption>
-			</div>
-
-			<div class="book-area">
-				<img src="img/レインツリーの国.jpg" alt="">	
-				<figcaption></figcaption>	
-			</div>
-
-			<div class="book-area">
-				<img src="img/ぼくは明日、昨日のきみとデートする.jpg" alt="">
-				<figcaption></figcaption>
-			</div>
-
-			<div class="book-area">
-			</div>
-			<div class="book-area">
-			</div>
-			<div class="book-area">
-			</div>
-			<div class="book-area">
-			</div>
-		</div>
-
-
+<div class="l-area">
+	<div class="book-area">
+		<img src="img/陽だまりの彼女.jpg" alt="">
+		<figcaption></figcaption>
 	</div>
-	<footer></footer>
-	
+
+	<div class="book-area">
+		<img src="img/告白.jpg" alt="">
+		<figcaption></figcaption>
+	</div>
+
+	<div class="book-area">
+		<img src="img/高校入試.jpg" alt="">
+		<figcaption></figcaption>
+	</div>
+
+	<div class="book-area">
+		<img src="img/隣の家の少女.jpg" alt="">
+		<figcaption></figcaption>
+	</div>
+
+	<div class="book-area">
+		<img src="img/花の鎖.jpg" alt="">
+		<figcaption></figcaption>
+	</div>
+
+	<div class="book-area">
+		<img src="img/イニシエーション・ラブ.jpg" alt="">
+		<figcaption></figcaption>
+	</div>
+
+	<div class="book-area">
+		<img src="img/レインツリーの国.jpg" alt="">	
+		<figcaption></figcaption>	
+	</div>
+
+	<div class="book-area">
+		<img src="img/ぼくは明日、昨日のきみとデートする.jpg" alt="">
+		<figcaption></figcaption>
+	</div>
+
+	<?php
+	$json = file_get_contents("https://api.booklog.jp/json/sinasi?count=20&status=4");//jsonを取ってくる
+	$arr = json_decode($json, true)["books"];//連想配列変換(デコード)する
+
+	foreach($arr as $data){//EOFで改行でかける
+	echo <<<EOF
+	<div class="book-area"><img src="{$data['image']}"/>
+	<figcaption></figcaption>
+	</div>
+EOF;
+	}//EOSは必ず文頭
+	//var_dump($arr);
+	?>
+	</div>
+</div>
+
+
+</div>
+
+
+
+<footer></footer>
+
 </body>
 </html>

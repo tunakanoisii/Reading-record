@@ -28,7 +28,7 @@ header{
 	width: 250px;
 	height: 50px;
 	margin: 25px 0;
-	margin-left: 10%; 
+	margin-left: 10%;
 	float: left;
 
 	position: relative;
@@ -99,7 +99,7 @@ header{
 }
 
 .book-area{
-	width: 200px;
+	width: 100px;
 	height: 270px;
 	margin: 20px;
 	background-color: #eee;
@@ -110,7 +110,7 @@ header{
 }
 
 .book-area img{
-	width: 200px;
+	width: 100px;
 	height: 100%;
 	margin: auto;
 
