@@ -186,7 +186,7 @@ figcaption{
 	display: none;
 	z-index: 3;
 
-	background-color: (0, 0, 0, 0, .75)
+	background-color: rgba(0, 0, 0, 0.75)
 }
 
 

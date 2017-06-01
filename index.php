@@ -27,13 +27,13 @@
 	</header>
 
 	<div id="main">
-		<div class="l-area">
-
-		<p>
-		<a id="modal_open" class="book_area button_link">押してね
-			<figcaption></figcaption>
+		<div class="l-area">		
+		<a id="modal_open" class="book_area button_link">
+		<figcaption>
+		<p>押してね</p>
+			</figcaption>
 		</a>
-		</p>>
+		
 
 		<div id="modal_contents">
 			<p>例だよ</p>
