@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="css/index.css">
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/jquery.akBooklog-master/jquery.akBooklog.js" ></script>
+<script type="text/javascript" src="js/modal.js"></script>
 <script type="text/javascript">
 	$(function(){
 		$('#books').akBooklog({})
@@ -20,54 +21,48 @@
 			└(^ω^)」三└(^ω^)」☆
 		</div>
 		<div class="menu">
-			<div class="menu-element">Record</div>
-			<div class="menu-element">Books</div>
+			<div class="menu_element">Record</div>
+			<a href="index.php"><div class="menu_element">Books</div></a>
 		</div>
 	</header>
 
 	<div id="main">
-<div class="l-area">
-<!--
-	<div class="book-area">
-		<img src="img/陽だまりの彼女.jpg" alt="">
-		<figcaption></figcaption>
-	</div>
+		<div class="l-area">
 
-	<div class="book-area">
-		<img src="img/告白.jpg" alt="">
-		<figcaption></figcaption>
-	</div>
+		<p>
+		<a id="modal_open" class="book_area button_link">押してね
+			<figcaption></figcaption>
+		</a>
+		</p>>
 
-	<div class="book-area">
-		<img src="img/高校入試.jpg" alt="">
-		<figcaption></figcaption>
-	</div>
+		<div id="modal_contents">
+			<p>例だよ</p>
+			<p><a id="modal_close" class="button_link">閉じる</a></p>
+		</div>
 
-	<div class="book-area">
-		<img src="img/隣の家の少女.jpg" alt="">
-		<figcaption></figcaption>
-	</div>
-	-->
-
-	<?php
-	$json = file_get_contents("https://api.booklog.jp/json/sinasi?count=350&status=0");//jsonを取ってくる
+			<?php
+			$mordal_count = 0;
+	$json = file_get_contents("https://api.booklog.jp/json/sinasi?count=1&status=0");//jsonを取ってくる
 	$arr = json_decode($json, true)["books"];//連想配列変換(デコード)する
 
 	foreach($arr as $data){//EOFで改行でかける
 		$src =  $data['image'];
-	$src = preg_replace("/\..{6}\.jpg$/", ".jpg", $src);
-	echo <<<EOF
-	<div class="book-area"><img src="{$src}"/>
-	<figcaption></figcaption>
-	</div>
+		$src = preg_replace("/\..{6}\.jpg$/", ".jpg", $src);
+		echo <<<EOF
+		<a id="modal_open" class="book_area button_link"><img src="{$src}"/>
+			<figcaption></figcaption>
+		</a>
+
+		<div id="modal_contents">
+			<p>例だよ</p>
+			<p><a id="modal_close" class="button_link">閉じる</a></p>
+		</div>
 EOF;
 	}//EOSは必ず文頭
 	//var_dump($arr);
 	?>
+		</div>
 	</div>
-</div>
-
-
 </div>
 
 

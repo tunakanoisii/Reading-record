@@ -47,7 +47,7 @@ header{
 	float: right;
 }
 
-.menu-element{
+.menu_element{
 	width: 60px;
 	height: 50px;
 	margin: 0 5px;
@@ -63,7 +63,7 @@ header{
 	transition: .3s;
 }
 
-.menu-element::after{
+.menu_element::after{
 	position: absolute;
 	bottom: .3em;
 	left: 0;
@@ -75,7 +75,7 @@ header{
 	transition: .3s;
 }
 
-.menu-element:hover::after{
+.menu_element:hover::after{
 	bottom: 0;
 	opacity: 1;
 }
@@ -98,7 +98,7 @@ header{
 	background-color: #eee;
 }
 
-.book-area{
+.book_area{
 	width: 200px;
 	height: 270px;
 	margin: 20px;
@@ -109,7 +109,7 @@ header{
 	float: left;
 }
 
-.book-area img{
+.book_area img{
 	width: 200px;
 	height: 100%;
 	margin: auto;
@@ -121,8 +121,8 @@ figcaption{
 	top: 0;
 	left: 0;
 	z-index: 2;
-	width: 100%;
-	height: 100%;
+	width: 200px;
+	height: 270px;
 	background: #FFD3B6;
 
 	-webkit-transition: .3s;
@@ -130,11 +130,11 @@ figcaption{
 	opacity: 0;
 }
 
-.book-area:hover figcaption{
+.book_area:hover figcaption{
 	opacity: 0.9;
 }
 
-.mod-bookList {
+.mod_bookList {
   padding: 0;
   list-style: none;
 
@@ -146,10 +146,58 @@ figcaption{
       margin: 0;
       float: left;
     }
-    
+
     .text {
       margin: 0;
       margin-left: 60px;
     }
   }
 }
+
+#modal_contents{
+	margin: 10px auto;
+	width: 100px;
+	height: 100px;
+
+	border: 1px solid #000;
+	background-color: #fff;
+
+	position: fixed;
+	z-index: 4;
+	display: none;
+}
+
+.button_link{
+	color: #00f;
+}
+
+.button_link:hover{
+	cursor: pointer;
+	color: #f00;
+}
+
+#modal_overlay{
+	width: 100%;
+	height: 120%;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: none;
+	z-index: 3;
+
+	background-color: (0, 0, 0, 0, .75)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
