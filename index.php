@@ -41,8 +41,8 @@
 		</div>
 
 			<?php
-			$mordal_count = 0;
-	$json = file_get_contents("https://api.booklog.jp/json/sinasi?count=1&status=0");//jsonを取ってくる
+			$mordal_count = 1;
+	$json = file_get_contents("https://api.booklog.jp/json/sinasi?count=30&status=0");//jsonを取ってくる
 	$arr = json_decode($json, true)["books"];//連想配列変換(デコード)する
 
 	foreach($arr as $data){//EOFで改行でかける
@@ -53,11 +53,12 @@
 			<figcaption></figcaption>
 		</a>
 
-		<div id="modal_contents">
+		<div id="modal_contents_">
 			<p>例だよ</p>
 			<p><a id="modal_close" class="button_link">閉じる</a></p>
 		</div>
 EOF;
+$modal_count = $modal_count + 1;
 	}//EOSは必ず文頭
 	//var_dump($arr);
 	?>
