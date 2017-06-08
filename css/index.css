@@ -134,27 +134,9 @@ figcaption{
 	opacity: 0.9;
 }
 
-.mod_bookList {
-  padding: 0;
-  list-style: none;
 
-  li {
-    @include clearfix;
-    margin: 20px 0;
 
-    .image {
-      margin: 0;
-      float: left;
-    }
-
-    .text {
-      margin: 0;
-      margin-left: 60px;
-    }
-  }
-}
-
-#modal_contents{
+.modal_contents{
 	margin: 10px auto;
 	width: 100px;
 	height: 100px;

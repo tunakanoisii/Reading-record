@@ -27,42 +27,33 @@
 	</header>
 
 	<div id="main">
-		<div class="l-area">		
-		<a id="modal_open" class="book_area button_link">
-		<figcaption>
-		<p>押してね</p>
-			</figcaption>
-		</a>
+		<div class="l-area">
 		
-
-		<div id="modal_contents">
-			<p>例だよ</p>
-			<p><a id="modal_close" class="button_link">閉じる</a></p>
-		</div>
-
 			<?php
-			$mordal_count = 0;
-	$json = file_get_contents("https://api.booklog.jp/json/sinasi?count=1&status=0");//jsonを取ってくる
+			$modal_count = 0;
+	$json = file_get_contents("https://api.booklog.jp/json/sinasi?count=20&status=0");//jsonを取ってくる
 	$arr = json_decode($json, true)["books"];//連想配列変換(デコード)する
 
 	foreach($arr as $data){//EOFで改行でかける
 		$src =  $data['image'];
 		$src = preg_replace("/\..{6}\.jpg$/", ".jpg", $src);
-		echo <<<EOF
-		<a id="modal_open" class="book_area button_link"><img src="{$src}"/>
-			<figcaption></figcaption>
-		</a>
 
-		<div id="modal_contents">
-			<p>例だよ</p>
-			<p><a id="modal_close" class="button_link">閉じる</a></p>
-		</div>
-EOF;
+		echo "<a class='modal_open book_area button_link' data-target='modal_contents_" .$modal_count. "'>";
+		echo "<img src='" .$src. "'/>";
+		echo 	"<figcaption></figcaption>";
+		echo "</a>";
+
+		echo "<div class='modal_contents modal_contents_" .$modal_count. "'>";
+		echo 	"<p>例だよ</p>";
+		echo 	"<p><a id='modal_close' class='button_link'>閉じる</a></p>";
+		echo "</div>";
+
+		$modal_count += 1;
 	}//EOSは必ず文頭
 	//var_dump($arr);
 	?>
-		</div>
-	</div>
+</div>
+</div>
 </div>
 
 
